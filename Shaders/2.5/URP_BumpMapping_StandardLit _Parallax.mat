@@ -78,11 +78,12 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HeightScale: 0.189
+    - _HeightScale: 0.129
     - _LightMode: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _ParallaxMode: 1
+    - _ParrallaxDepthBias: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 1

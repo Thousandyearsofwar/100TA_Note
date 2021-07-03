@@ -19,6 +19,7 @@
     half _Metallic;
     half _BumpScale;
     half _HeightScale;
+    half _ParrallaxDepthBias;
     half _OcclusionStrength;
     half _Anisotropic;
     CBUFFER_END

@@ -30,10 +30,14 @@ float2 ParallaxMapping(float2 texCoords, float3 viewDir)
     return AddUV;
 }
 
-float2 ParallaxOcclusionMapping(float2 texCoords, float3 viewDir)
+float2 ParallaxOcclusionMapping(float2 texCoords, float3 viewDir, float3 ndotv)
 {
     float2 offsetUV = viewDir.xy / viewDir.z * _HeightScale;
     float RayNum = 20;
+
+    float RayNum_Max = 500;
+    float RayNum_Min = 60;
+    RayNum = lerp(RayNum_Max, RayNum_Min, ndotv);
 
     float layerDepth = 1.0 / RayNum;
 
@@ -43,34 +47,41 @@ float2 ParallaxOcclusionMapping(float2 texCoords, float3 viewDir)
 
     float currentLayerDepth = 0;
 
-    float offUV = float2(0, 0);
-
-    for (int i = 0; i < RayNum; i++)
+    float2 offUV = float2(0, 0);
+    
+    for (int i = 0; i < RayNum_Max; i++)
     {
         offUV += SteepingUV;
 
         float currentDepth = SAMPLE_TEXTURE2D(_HeightMap, sampler_HeightMap, texCoords + offUV).r;
-        currentLayerDepth += currentDepth;
+        currentLayerDepth += layerDepth;
 
-        if(currentDepth<currentLayerDepth)
+        if (i > RayNum)
+            break;
+
+        if (currentDepth < currentLayerDepth)
             break;
     }
 
-    float2 T0=texCoords-SteepingUV,T1=texCoords+offUV;
+    float2 T0 = texCoords - SteepingUV, T1 = texCoords + offUV;
 
-    for(int j=0;j<20;j++){
-        float2 P0=(T0+T1)/2;
-        float P0Height=SAMPLE_TEXTURE2D(_HeightMap, sampler_HeightMap,P0).r;
-        float P0LayerHeight=length(P0)/offsetUVLength;
-        if(P0Height<P0LayerHeight)
-            T0=P0;
+    for (int j = 0; j < 20; j++)
+    {
+        float2 P0 = (T0 + T1) / 2;
+        float P0Height = SAMPLE_TEXTURE2D(_HeightMap, sampler_HeightMap, P0).r;
+        float P0LayerHeight = length(P0) / offsetUVLength;
+        if (P0Height < P0LayerHeight)
+            T0 = P0;
         else
-            T1=P0;
+            T1 = P0;
     }
 
-    return (T0+T1)/2-texCoords;
+    return(T0 + T1) / 2 - texCoords;
 }
 
-
+float2 QuadtreeDisplacementMapping(float2 texCoords, float3 viewDir)
+{
+    return texCoords;
+}
 
 #endif

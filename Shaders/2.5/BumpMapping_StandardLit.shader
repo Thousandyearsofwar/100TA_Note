@@ -29,6 +29,7 @@
 
         _HeightMap("Height Map",2D)="White"{}
         _HeightScale("Height Scale", Range(0.0, 1.0)) = 1.0
+        _ParrallaxDepthBias("Parrallax Depth Bias",float)=0.0
         [Enum(Off,0,Parallax,1,Steep_Parallax,2,POM,3)] _ParallaxMode("Parallax Mode",Float)=0.0
 
         _OcclusionStrength("Strength", Range(0.0, 1.0)) = 1.0
