@@ -51,7 +51,7 @@
       EffectWidth:影响宽度</br>
       FallOff:衰减</br>
       GuideSampleCount：曲线采样次数</br>
-      ![图 4](https://i.loli.net/2021/07/17/krI9igzpd61GyB8.png) 
+      ![图 4](https://i.loli.net/2021/07/17/krI9igzpd61GyB8.png) </br>
       Flowmap obstacle:根据模型对flowmap流动产生阻挡效果
       Strength:阻挡力度大小</br>
       DivisionSize:模型导入后转换成体素的大小</br>
