@@ -42,27 +42,28 @@
     + Flowmap Painter
     + Houdini Labs
       + Flow Map相关节点
-      FlowMap:使用法线,梯度,方向生成FlowMap
+      FlowMap:使用法线,梯度,方向生成FlowMap</br>
       ![图 2](https://i.loli.net/2021/07/17/Vy2WN8R17cgkIBh.png)  
-      FlowMap Visualize:FlowMap可视化
+      FlowMap Visualize:FlowMap可视化</br>
       ![图 3](https://i.loli.net/2021/07/17/2WTQIfSiZmy95lr.png)  
-      Guide FlowMap:使用曲线引导FlowMap
-      strength:影响力度
-      EffectWidth:影响宽度
-      FallOff:衰减
-      GuideSampleCount：曲线采样次数
+      Guide FlowMap:使用曲线引导FlowMap</br>
+      strength:影响力度</br>
+      EffectWidth:影响宽度</br>
+      FallOff:衰减</br>
+      GuideSampleCount：曲线采样次数</br>
       ![图 4](https://i.loli.net/2021/07/17/krI9igzpd61GyB8.png) 
       Flowmap obstacle:根据模型对flowmap流动产生阻挡效果
-      Strength:阻挡力度大小
-      DivisionSize:模型导入后转换成体素的大小
-      DilateVolume:转换成体素之后外扩程度，大于零往外扩，小于零往里缩
-      BlurStrength:模糊程度大小
+      Strength:阻挡力度大小</br>
+      DivisionSize:模型导入后转换成体素的大小</br>
+      DilateVolume:转换成体素之后外扩程度，大于零往外扩，小于零往里缩</br>
+      BlurStrength:模糊程度大小</br>
       ![图 5](https://i.loli.net/2021/07/17/5LnKFw18ORPiHlM.png)  
-      Flowmap to color
-      Flip Green Channel 错误不用管
+      Flowmap to color</br>
+      Flip Green Channel 错误不用管</br>
       ![图 6](https://i.loli.net/2021/07/17/NFsg7LZAYyUCIqR.png)  
-      Maps baker:贴图烘焙
+      Maps baker:贴图烘焙</br>
       ![图 7](https://i.loli.net/2021/07/18/WNIM71nuATQVOEh.png)  
   + ### FlowMap Skybox
     ![图 1](https://i.loli.net/2021/07/17/Gtf8VCxo7uSZT3I.png)  
+    https://github.com/Thousandyearsofwar/100TA_Note/blob/main/Shader/FlowMap/SkyBoxShader/SkyBox_FlowMap.shader
 + ## 待续
